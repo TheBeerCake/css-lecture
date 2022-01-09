@@ -16,25 +16,82 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>✨ CSS</h1>
+        <h1>✨ CSS Tooling</h1>
         <p>
-            by <a href="">Anatoliy Belobrovik</a>
+            by <a href="">Kristaps Klēvers</a>
         </p>
+        <p>Original presetation by Anatoliy Belobrovik</p>
     </header>
 
     <section class="slide">
         <h2>📝 Lecture plan</h2>
         <ul>
             <li value="✏️">CSS Cascade. CSS Specificity</li>
-            <li value="✏️">CSS Modules & CSS-in-JS</li>
             <li value="✏️">CSS Custom Properties</li>
             <li value="✏️">CSS Layouts — Flexbox & Grid</li>
-            <li value="✏️">PostCSS</li>
+            <li value="✏️">CSS Modules & CSS-in-JS</li>
+            <li value="✏️">Technologies</li>
         </ul>
     </section>
 
     <section class="slide" data-timing="00:03">
         <h2 class="shout">CSS Cascade</h2>
+    </section>
+
+    
+    <section class="slide">
+        <h2>🤓 CSS Cascade definition</h2>
+        <figure>
+            <blockquote>
+                <p>The cascade takes an unordered list of declared values for a given property on a given element, sorts
+                    them by their declaration’s precedence as determined below, and outputs a single cascaded value.</p>
+            </blockquote>
+
+            <figcaption><a href="https://drafts.csswg.org/css-cascade/#cascading">CSS WG</a></figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Cascade sorting order</h2>
+        <ul>
+            <li value="👉">Origin and Importance</li>
+            <li value="👉">Context</li>
+            <li value="👉">Specificity</li>
+            <li value="👉">Order of Appearance</li>
+        </ul>
+        <p class="note" lang="ru">
+            <a href="https://www.w3.org/TR/css-cascade-5/#cascade">
+                Cascade Sorting Order
+            </a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Origin and Importance</h2>
+        <ol>
+            <li>Transition declarations</li>
+            <li>!important user agent declarations</li>
+            <li>!important user declarations</li>
+            <li>!important author declarations</li>
+            <li>Animation declarations</li>
+            <li>Normal author declarations</li>
+            <li>Normal user declarations</li>
+            <li>Normal user agent declarations</li>
+        </ol>
+    </section>
+
+    <section class="slide clear">
+        <h2>Specificity</h2>
+
+        <img style="height: 25rem; margin-top: 2rem;" class="cover" src="pictures/specificity.png" alt="">
+        <p class="note place bottom" style="left: 20%;">
+            <a href="https://specificity.keegan.st">Specificity Calculator</a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Order of Appearance</h2>
+        <p>The last declaration in document order wins.</p>
     </section>
 
     <section class="slide">
@@ -56,7 +113,7 @@
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of section p is 0.0.0.0.2 and <mark>.p1 is 0.0.0.1.0</mark></p>
+        <p class="note next">💡 The specificity of section p is 0.0.2 and <mark>.p1 is 0.1.0</mark></p>
     </section>
 
     <section class="slide">
@@ -78,7 +135,7 @@
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of <mark>.section1 p is 0.0.0.1.1</mark> and .p1 is 0.0.0.1.0</p>
+        <p class="note next">💡 The specificity of <mark>.section1 p is 0.1.1</mark> and .p1 is 0.1.0</p>
     </section>
 
     <section class="slide">
@@ -124,7 +181,7 @@
                 <code>&lt;/section&gt;</code>
         </pre>
         </div>
-        <p class="note next">💡 The specificity of <mark>#section1 * is 0.0.1.0.0</mark> and .p1 is 0.0.0.1.0</p>
+        <p class="note next">💡 The specificity of <mark>#section1 * is 1.0.0</mark> and .p1 is 0.1.0</p>
     </section>
 
     <section class="slide">
@@ -146,7 +203,7 @@
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of section * is 0.0.0.0.1. The specificity of <mark>p is also 0.0.0.0.1
+        <p class="note next">💡 The specificity of section * is 0.0.1. The specificity of <mark>p is also 0.0.1
                 but
                 it comes later in the stylesheet</mark>.</p>
     </section>
@@ -170,9 +227,9 @@
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of section .p1 is 0.0.0.1.1. The specificity of <mark>section
+        <p class="note next">💡 The specificity of section .p1 is 0.1.1. The specificity of <mark>section
                 :nth-child(2)
-                is also 0.0.0.1.1 but it comes later in the stylesheet</mark>.</p>
+                is also 0.1.1 but it comes later in the stylesheet</mark>.</p>
     </section>
 
     <section class="slide">
@@ -194,8 +251,8 @@
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of section > p is 0.0.0.0.2. The specificity of <mark>section p is also
-                0.0.0.0.2 but it comes later in the stylesheet</mark>.</p>
+        <p class="note next">💡 The specificity of section > p is 0.0.2. The specificity of <mark>section p is also
+                0.0.2 but it comes later in the stylesheet</mark>.</p>
     </section>
 
     <section class="slide">
@@ -211,68 +268,97 @@
             </pre>
             <pre>
                     <code>&lt;section class="section" id="section"&gt;</code>
-                    <code class="green next">  &lt;p class="red green"&gt;Paragraph&lt;/p&gt;</code>
+                    <code class="green next">  &lt;p class="green red"&gt;Paragraph&lt;/p&gt;</code>
                     <code>&lt;/section&gt;</code>
             </pre>
         </div>
-        <p class="note next">💡 The specificity of .red is 0.0.0.1.0. The specificity of <mark>.green is also 0.0.0.1.0
+        <p class="note next">💡 The specificity of .red is 0.1.0. The specificity of <mark>.green is also 0.1.0
                 but
                 it comes later in the stylesheet</mark>.</p>
     </section>
-
     <section class="slide">
-        <h2>🤓 CSS Cascade definition</h2>
-        <figure>
-            <blockquote>
-                <p>The cascade takes an unordered list of declared values for a given property on a given element, sorts
-                    them by their declaration’s precedence as determined below, and outputs a single cascaded value.</p>
-            </blockquote>
-
-            <figcaption><a href="https://drafts.csswg.org/css-cascade/#cascading">CSS WG</a></figcaption>
-        </figure>
+        <h2 class="shout">CSS Custom Properties</h2>
     </section>
 
     <section class="slide">
-        <h2>Cascade sorting order</h2>
-        <ul>
-            <li value="👉">Origin and Importance</li>
-            <li value="👉">Context</li>
-            <li value="👉">Specificity</li>
-            <li value="👉">Order of Appearance</li>
-        </ul>
-        <p class="note" lang="ru">
-            <a href="https://css-live.ru/css/nikto-ne-znaet-css-specifichnost-ne-kaskad.html">
-                «Никто не знает CSS: специфичность — не каскад» — Илья Стрельцин
-            </a>
-        </p>
+        <h2><a href="https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/">CSS Custom Properties</a></h2>
+        <pre>
+            <code><span class="magenta">:root</span> {</code>
+            <code>  --bg-color: <span class="box plum"></span> <span class="orange">plum</span>; <span class="comment">// declare a custom variable</span></code>
+            <code>  --base-padding: <span class="blue">0.5</span><span class="magenta">rem</span>;</code>
+            <code>}</code>
+
+            <code><span class="magenta">.Component</span> {</code>
+            <code>  background-color: <span class="blue">var</span>(--bg-color); <span class="comment">// use the custom variable</span></code>
+            <code>  padding: <span class="blue">calc</span>(<span class="blue">2</span> <span class="magenta">*</span> <span class="blue">var</span>(--base-padding));</code>
+            <code>}</code>
+        </pre>
     </section>
 
     <section class="slide">
-        <h2>Origin and Importance</h2>
+        <h2>👨‍💻 [Practice] CSS Custom Properties</h2>
         <ol>
-            <li>Transition declarations</li>
-            <li>!important user agent declarations</li>
-            <li>!important user declarations</li>
-            <li>!important author declarations</li>
-            <li>Animation declarations</li>
-            <li>Normal author declarations</li>
-            <li>Normal user declarations</li>
-            <li>Normal user agent declarations</li>
+            <li>Convert it to CSS Custom Properties</li>
+            <li>(optional) Make it responsive - change base font size on different screen sizes</li>
         </ol>
-    </section>
-
-    <section class="slide clear">
-        <h2>Specificity</h2>
-
-        <img style="height: 25rem; margin-top: 2rem;" class="cover" src="pictures/specificity.png" alt="">
-        <p class="note place bottom" style="left: 20%;">
-            <a href="https://specificity.keegan.st">Specificity Calculator</a>
-        </p>
+        <p class="note"><a rel="noreferrer noopener" target="_blank" href="https://type-scale.com">type-scale.com</a></p class="note">
     </section>
 
     <section class="slide">
-        <h2>Order of Appearance</h2>
-        <p>The last declaration in document order wins.</p>
+        <h2>Comparison to CSS preprocessors</h2>
+        <div class="columns two">
+            <div>
+                <h3>Preprocessors variables are...</h3>
+                <ul>
+                    <li value="👉">Both global & local</li>
+                    <li value="👉">Static</li>
+                    <li value="👉">Not flexible</li>
+                </ul>
+            </div>
+            <div>
+                <h3>CSS Custom Properties are...</h3>
+                <ul>
+                    <li value="👉">Global</li>
+                    <li value="👉">Dynamic</li>
+                    <li value="👉">Accessible from JS land</li>
+                    <li value="👉">CSS as API</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>CSS Custom Properties usecases</h2>
+        <ul>
+            <li value="👉" class="next">Create complex CSS properties</li>
+            <li value="👉" class="next">Create color themes</li>
+            <li value="👉" class="next">Use it with JavaScript (e.g. animation)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>JavaScript API</h2>
+
+        <pre>
+            <code class="next"><span class="magenta">let</span> element = document.<span class="blue">querySelector</span>(<span class="greeny">"#element"</span>)</code>
+            <code class="next"><span class="magenta">let</span> styles = <span class="blue">getComputedStyle</span>(element)</code>
+            <code class="next"><span class="magenta">let</span> size = +styles.<span class="blue">getPropertyValue</span>(<span class="greeny">"--base-size"</span>)</code>
+            <code class="next">element.style.<span class="blue">setProperty</span>(<span class="greeny">"--base-size"</span>, size <span class="magenta">+</span> <span class=blue>4</span>)</code>
+        </pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>CSS Custom Properties</h2>
+        <ul>
+            <li value="👍" class="next">Native solution</li>
+            <li value="👍" class="next">Obeyed to CSS Cascade</li>
+            <li value="👍" class="next">Dynamic nature</li>
+            <li value="👍" class="next">Accessible via JS</li>
+            <li value="👍" class="next">Could be pollyfilled in some base cases</li>
+            <li value="👍" class="next">Good compilation target</li>
+            <li value="🤔" style="margin-top: 2rem;" class="next"><a href="https://lisilinhart.info/posts/css-variables-performance/">Performance</a></li>
+        </ul>
     </section>
 
     <section class="slide" data-timing="00:03">
@@ -394,91 +480,6 @@
             <li value="👍" class="next">Server-side rendering</li>
             <li value="👍" class="next">Compilation step is optional</li>
             <li value="🤔" style="margin-top: 2rem;" class="next">If you skip the compilation step, the css will be generated right at runtime.</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2 class="shout">CSS Custom Properties</h2>
-    </section>
-
-    <section class="slide">
-        <h2><a href="https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/">CSS Custom Properties</a></h2>
-        <pre>
-            <code><span class="magenta">:root</span> {</code>
-            <code>  --bg-color: <span class="box plum"></span> <span class="orange">plum</span>; <span class="comment">// declare a custom variable</span></code>
-            <code>  --base-padding: <span class="blue">0.5</span><span class="magenta">rem</span>;</code>
-            <code>}</code>
-
-            <code><span class="magenta">.Component</span> {</code>
-            <code>  background-color: <span class="blue">var</span>(--bg-color); <span class="comment">// use the custom variable</span></code>
-            <code>  padding: <span class="blue">calc</span>(<span class="blue">2</span> <span class="magenta">*</span> <span class="blue">var</span>(--base-padding));</code>
-            <code>}</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>👨‍💻 [Practice] CSS Custom Properties</h2>
-        <ol>
-            <li>Convert it to CSS Custom Properties</li>
-            <li>(optional) Make it responsive - change base font size on different screen sizes</li>
-        </ol>
-        <p class="note"><a rel="noreferrer noopener" target="_blank" href="https://type-scale.com">type-scale.com</a></p class="note">
-    </section>
-
-    <section class="slide">
-        <h2>Comparison to CSS preprocessors</h2>
-        <div class="columns two">
-            <div>
-                <h3>Preprocessors variables are...</h3>
-                <ul>
-                    <li value="👉">Both global & local</li>
-                    <li value="👉">Static</li>
-                    <li value="👉">Not flexible</li>
-                </ul>
-            </div>
-            <div>
-                <h3>CSS Custom Properties are...</h3>
-                <ul>
-                    <li value="👉">Global</li>
-                    <li value="👉">Dynamic</li>
-                    <li value="👉">Accessible from JS land</li>
-                    <li value="👉">CSS as API</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2>CSS Custom Properties usecases</h2>
-        <ul>
-            <li value="👉" class="next">Emulate non-existing CSS properties</li>
-            <li value="👉" class="next">Create color themes</li>
-            <li value="👉" class="next">Use it with JavaScript (e.g. animation)</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>JavaScript API</h2>
-
-        <pre>
-            <code class="next"><span class="magenta">let</span> element = document.<span class="blue">querySelector</span>(<span class="greeny">"#element"</span>)</code>
-            <code class="next"><span class="magenta">let</span> styles = <span class="blue">getComputedStyle</span>(element)</code>
-            <code class="next"><span class="magenta">let</span> size = +styles.<span class="blue">getPropertyValue</span>(<span class="greeny">"--base-size"</span>)</code>
-            <code class="next">element.style.<span class="blue">setProperty</span>(<span class="greeny">"--base-size"</span>, size <span class="magenta">+</span> <span class=blue>4</span>)</code>
-        </pre>
-    </section>
-
-
-    <section class="slide">
-        <h2>CSS Custom Properties</h2>
-        <ul>
-            <li value="👍" class="next">Native solution</li>
-            <li value="👍" class="next">Obeyed to CSS Cascade</li>
-            <li value="👍" class="next">Dynamic nature</li>
-            <li value="👍" class="next">Accessible via JS</li>
-            <li value="👍" class="next">Could be pollyfilled in some base cases</li>
-            <li value="👍" class="next">Good compilation target</li>
-            <li value="🤔" style="margin-top: 2rem;" class="next"><a href="https://lisilinhart.info/posts/css-variables-performance/">Performance</a></li>
         </ul>
     </section>
 
