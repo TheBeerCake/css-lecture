@@ -80,6 +80,11 @@
         </ol>
     </section> -->
 
+    <section class="slide">
+        <h2>Order of Appearance</h2>
+        <p>The last declaration in document order wins.</p>
+    </section>
+
     <section class="slide clear">
         <h2>Specificity</h2>
 
@@ -87,11 +92,6 @@
         <p class="note place bottom" style="left: 20%;">
             <a href="https://specificity.keegan.st">Specificity Calculator</a>
         </p>
-    </section>
-
-    <section class="slide">
-        <h2>Order of Appearance</h2>
-        <p>The last declaration in document order wins.</p>
     </section>
 
     <section class="slide">
@@ -281,11 +281,14 @@
     </section>
 
     <section class="slide">
-        <h2>CSS Custom Properties usecases</h2>
+        <h2>CSS Custom Properties</h2>
+        <p style="font-size: 14px;">Property names that are prefixed with --, like --example-name, represent custom properties that contain a value that can be used in other declarations using the var() function.</p>
+        <p style="font-size: 14px;">Custom properties are scoped to the element(s) they are declared on, and participate in the cascade: the value of such a custom property is that from the declaration decided by the cascading algorithm.</p>
         <ul>
             <li value="👉" class="next">Create complex CSS properties</li>
             <li value="👉" class="next">Create color themes</li>
             <li value="👉" class="next">Use it with JavaScript (e.g. animation)</li>
+            <li value="👉" class="next"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/env()">--env browser properties</a></li>
         </ul>
     </section>
 
@@ -311,6 +314,7 @@
             <li>(optional) Make it responsive - change base font size on different screen sizes</li>
         </ol>
         <p class="note"><a rel="noreferrer noopener" target="_blank" href="https://type-scale.com">type-scale.com</a></p class="note">
+        <p class="note"><a rel="noreferrer noopener" target="_blank" href="https://codesandbox.io/s/css-custom-properties-task-bokhqc">Codesandbox</a></p class="note">
     </section>
 
     <section class="slide">
@@ -879,6 +883,10 @@
     </section>
 
     <section class="slide">
+        <h2 class="shout">CSS Grid</h2>
+    </section>
+
+    <section class="slide">
         <h2>CSS Grid API</h2>
         <div class="columns two">
             <ul>
@@ -914,6 +922,11 @@
     </section>
 
     <section class="slide">
+        <h2>Grid cell</h2>
+        <img class="cover" src="pictures/grid-cell.png" alt="">
+    </section>
+
+    <section class="slide">
         <h2>Grid lines</h2>
         <img class="cover" src="pictures/grid-lines.png" alt="">
     </section>
@@ -931,11 +944,6 @@
     <section class="slide">
         <h2>Grid area</h2>
         <img class="cover" src="pictures/grid-area.png" alt="">
-    </section>
-
-    <section class="slide">
-        <h2>Grid cell</h2>
-        <img class="cover" src="pictures/grid-cell.png" alt="">
     </section>
 
     <section class="slide">
@@ -1120,8 +1128,8 @@
 
     <section class="slide">
         <h2>Implicit grid</h2>
-        <p><a href="https://codesandbox.io/s/implicit-grid-027ow?file=/index.html">Codesandbox 1</a></p>
-        <p><a href="https://codesandbox.io/s/grid-auto-flow-forked-8tij8">Codesandbox 2</a></p>
+        <p><a href="https://codesandbox.io/s/implicit-grid-dusk-z9n00r?file=/index.html">Codesandbox 1</a></p>
+        <p><a href="https://codesandbox.io/s/grid-auto-flow-forked-8tij8?file=/index.html">Codesandbox 2</a></p>
         <p><a href="https://www.youtube.com/watch?v=cMWnIX3ukLI">The Explicit and Implicit grid explained</a></p>
     </section>
 
@@ -1173,16 +1181,14 @@
 
     <section class="slide clear">
         <h2>🙅 🚓👮</h2>
-        <pre class="place bottom">
-            <code>
-                body { ... }
-                body div.content div.container { ... }
-                body div.content div.container div.articles { ... }
-                body div.content div.container div.articles > div.post { ... }
-                body div.content div.container div.articles > div.post div.title { ... }
-                body div.content div.container div.articles > div.post div.title h1 { ... }
-                body div.content div.container div.articles > div.post div.content { ... }
-            </code>
+        <pre style="font-size: 1.2rem;">
+            <code>body { ... }</code>
+            <code>body div.content div.container { ... }</code>
+            <code>body div.content div.container div.articles { ... }</code>
+            <code>body div.content div.container div.articles > div.post { ... }</code>
+            <code>body div.content div.container div.articles > div.post div.title { ... }</code>
+            <code>body div.content div.container div.articles > div.post div.title h1 { ... }</code>
+            <code>body div.content div.container div.articles > div.post div.content { ... }</code>
         </pre>
     </section>
 
@@ -1337,7 +1343,7 @@
     </section>
 
     <section class="slide">
-        <h2><a href="">TailwindCSS</a></h2>
+        <h2><a href="https://tailwindcss.com/">TailwindCSS</a></h2>
         <img style="height: 20rem;" src="pictures/tailwind-example.png" alt="">
     </section>
 
@@ -1354,7 +1360,12 @@
     </section>
     <section class="slide">
         <h2>Extra stuff</h2>
-        <a href="https://caniuse.com/">Can I use ...?</a>
+        <ul>
+            <li><a href="https://caniuse.com/">Can I use ...?</a></li>
+            <li><a href="https://css-tricks.com/how-supports-works/">CSS @supports</a></li>
+        </ul>
+  
+        
 
 
     </section>
