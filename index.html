@@ -24,7 +24,9 @@
         <ul>
             <li value="✏️">CSS Cascade. CSS Specificity</li>
             <li value="✏️">CSS Custom Properties</li>
-            <li value="✏️">CSS Layouts — Flexbox & Grid</li>
+            <li value="✏️">CSS Units</li>
+            <li value="✏️">CSS Layouts — Flexbox</li>
+            <li value="✏️">CSS Layouts — Grid</li>
             <li value="✏️">CSS Modules & CSS-in-JS</li>
             <li value="✏️">Technologies</li>
         </ul>
@@ -55,7 +57,7 @@
             <li value="👉">Specificity</li>
             <li value="👉">Order of Appearance</li>
         </ul>
-        <p class="note" lang="ru">
+        <p class="note" lang="en">
             <a href="https://www.w3.org/TR/css-cascade-5/#cascade">
                 Cascade Sorting Order
             </a>
@@ -74,11 +76,16 @@
             <li>Normal user declarations</li>
             <li>Normal user agent declarations</li>
         </ol>
+
     </section>
 
     <section class="slide">
-        <h2>Order of Appearance</h2>
-        <p>The last declaration in document order wins.</p>
+        <h2>Summary</h2>
+    
+            <img style="height: 25rem; margin-top: 3rem;" class="cover" src="pictures/cascadeLayers.svg" alt="">
+            <p class="note place bottom" style="left: 20%;">
+                <a href="https://css-tricks.com/css-cascade-layers/">Source</a>
+            </p>
     </section>
 
     <section class="slide clear">
@@ -322,6 +329,11 @@
               env(safe-area-inset-left)</span>;</code>
             <code>}</code>
         </pre>
+        <div  style="font-size: 0.6em;">
+            <pre>
+                <code>getComputedStyle(element).getPropertyValue('env(safe-area-inset-top)')</code>
+            </pre>
+        </div>
     </section>
 
     <section class="slide">
@@ -1355,10 +1367,10 @@
     <section class="slide">
         <h2>Tools built with PostCSS</h2>
         <div class="columns four">
-            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/autoprefixer.png" alt="">
-            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/stylelint.png" alt="">
-            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/tailwindcss.png" alt="">
-            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/postcss.png" alt="">
+            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/autoprefixer.png" alt="Autoprefixer">
+            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/stylelint.png" alt="Stylelint">
+            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/tailwindcss.png" alt="TailwindCSS">
+            <img style="object-fit: contain;" width="168px" height="168px" src="pictures/postcss.png" alt="PostCSS">
         </div>
         <p style="margin-top: 5rem;">... and many more!</p>
     </section>
@@ -1398,15 +1410,12 @@
         <h2>Extra stuff</h2>
         <ul>
             <li><a href="https://caniuse.com/">Can I use ...?</a></li>
+            <li><a href="https://css-tricks.com/clipping-masking-css/">CSS Masks</a></li>
             <li><a href="https://css-tricks.com/how-supports-works/">CSS @supports</a></li>
         </ul>
-  
-        
-
-
     </section>
     <section class="slide">
-        <h2 class="shout">The End</h2>
+        <h3 class="shout">Thank you!</h3>
     </section>
 
     <div class="progress"></div>
