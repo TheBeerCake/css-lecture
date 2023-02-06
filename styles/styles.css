@@ -106,3 +106,7 @@
     "content content sidebar"
     "footer footer footer";
 }
+
+.slide::after {
+  right:-925px;
+}
